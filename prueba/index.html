@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            perspective: 10px;
+            perspective-origin: 50%;
+            overflow-x: hidden;
+            transform-style: preserve-3d;
+        }
+        .background {
+            width: 100%;
+            height: 1345px;
+            background: linear-gradient(194deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 11%, rgba(209,3,132,1) 67%, rgba(0,212,255,1) 95%);
+            transform: translateZ(0px) scale(1) ;
+            position: absolute;
+        }
+        .layer {
+            position: absolute;
+            left: 0;
+            right: 0;
+
+            height: 100%;
+        }
+        .layer-1 {
+            transform: translateZ(3px) scale(0.7);
+        }
+        .card {
+            background-color: aliceblue;
+            width: 80px;
+            height: 100px;
+            border: 1px solid hotpink;
+            position: absolute;
+            border-radius: 5px;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.21);
+            transform: rotate(20deg);
+            transition: transform 500ms;
+        }
+        .card:hover {
+            transform: skew(5deg);
+        }
+        .card:nth-of-type(1){
+            left: 15%;
+            bottom: -50%;
+        }
+        .card:nth-of-type(2){
+            right: 15%;
+            bottom:-10%;
+        }
+        .card:nth-of-type(3){
+            left: 20%;
+            top: 40%;
+        }
+        .layer-2 {
+            transform: translateZ(5px) scale(0.5);
+        }
+        .block {
+            position: absolute;
+            left: 50%;
+            top: 90%;
+            width: 500px;
+            height: 650px;
+            border-radius: 50%;
+            background-color: cornflowerblue;
+            transform: translate3d(-50%, 0, 8px) skew(10deg);
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.21);
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="background"></div>
+        <div class="layer layer-3">
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+        </div>
+        <div class="layer layer-1">
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+        </div>
+        <div class="layer layer-2">
+            <div class="block"></div>
+        </div>
+    </div>
+</body>
+</html>
